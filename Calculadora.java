@@ -4,9 +4,9 @@ public class Calculadora {
 
     public static Scanner leer = new Scanner(System.in);
     public static int opcion;
-    public static double n1;
-    public static double n2;
-    public static double r;
+    public static double n1;    //Primera variable 
+    public static double n2;    //Segunda variable
+    public static double r;     //Resultado de la operación
     public static String p;
 
     public static void main(String[] args) {
@@ -40,26 +40,26 @@ public class Calculadora {
     public static void Operaciones() {
 
         switch (opcion) {
-            case 1:
+            case 1://Suma
                 r = n1 + n2;
                 System.out.println("El resultado es " + r);
                 Continuar();
                 break;
-            case 2:
+            case 2://Resta
                 r = n1 - n2;
                 System.out.println("El resultado es " + r);
                 Continuar();
                 break;
-            case 3:
+            case 3://Multiplicación
                 r = n1 * n2;
                 System.out.println("El resultado es " + r);
                 Continuar();
                 break;
-            case 4:
-            if(n2==0){
+            case 4://División
+            if(n2==0){//Divisor igual a 0
                 System.out.println("Error numero indeterminado");
                 Menu();
-            }else{
+            }else{//Divisor diferente de 0
                 r = n1 / n2;
                 System.out.println("El resultado es " + r);
                 Continuar();
@@ -75,10 +75,10 @@ public class Calculadora {
     public static void Continuar() {
         System.out.println("¿Desea hacer otra operacion con el resultado? Si(Y)/No(N)");
         p = leer.next();
-        if (p.equals("y") || p.equals("Y")) {
+        if (p.equals("y") || p.equals("Y")) {//Hacer otra operacion con el resultado
             n1 = r;
             ParteDos();
-        }else if (p.equals("n")|| p.equals("N")){
+        }else if (p.equals("n")|| p.equals("N")){//Volver al Menu principal
             Menu();
         }else {
             System.out.println("Ingrese la letra correcta");
